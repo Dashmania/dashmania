@@ -1,0 +1,28 @@
+{%include 'header.html'%}
+
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>name</th>
+                <th>lastname</th>
+                <th>email</th>
+                <th>phone</th>
+                <th>accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in user %}
+            <tr>
+                <td>{{user[0]}}</td>
+                <td>{{user[1]}}</td>
+                <td>{{user[2]}}</td>
+                <td>{{user[3]}}</td>
+                <td>{{user[4]}}</td>
+                <td><a class="btn btn-success" href="/edit/{{user[0]}}">edit</a> | <a class="btn btn-danger" href="/destroy/{{user[0]}}">delete</a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>    
+{%include 'footer.html'%}
